@@ -1,0 +1,127 @@
+1)  import java.util.Scanner;
+public class question1 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the first number:");
+        int num1 = input.nextInt();
+        System.out.print("Enter the second number:");
+        int num2 = input.nextInt();
+        System.out.print("Enter the third number:");
+        int num3 = input.nextInt();
+        System.out.print("Enter the fourth number:");
+        int num4 = input.nextInt();
+        if (num1 == num3 && num2 == num3 && num3 == num4) {
+            System.out.println("Numbers are equal");
+        } else {
+            System.out.println("Numbers are not equal");
+        }
+    }
+}
+
+2)  import java.util.Scanner;
+
+public class question2 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the first double value:");
+        double num1 = input.nextDouble();
+        System.out.print("Enter the second double value:");
+        double num2 = input.nextDouble();
+        if (num2 > 0 && num2 < 1 && num1 > 0 && num1 < 1) {
+            System.out.println("True");
+        } else {
+            System.out.println("False");
+        }
+    }
+}
+
+3) public class question3 {
+    public static void main(String[] args) {
+        String[][] a = { { "TRUE", "FALSE", "TRUE" }, { "FALSE", "TRUE", "FALSE" } };
+
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (a[i][j] == "TRUE") {
+                    System.out.println("t");
+                } else {
+                    System.out.println("f");
+                }
+            }
+            System.out.println(" ");
+        }
+    }
+
+}
+
+4) public class question4 {
+    public static void main(String[] args) {
+        int original[][] = { { 10, 20, 30 }, { 40, 50, 60 } };
+        int r = original.length;
+        int c = original[0].length;
+        int transpose[][] = new int[c][r];
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                transpose[j][i] = original[i][j];
+            }
+        }
+
+        for (int i = 0; i < c; i++) {
+            for (int j = 0; j < r; j++) {
+                System.out.print(transpose[i][j] + " ");
+            }
+            System.out.println("");
+        }
+    }
+}
+
+5)public class question5 {
+    public static void main(String[] args) {
+        int arr[] = new int[] { 1, 4, 17, 7, 25, 3, 100 };
+        int k = 3, temp = 0;
+        System.out.println("original array:");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+        System.out.println(k + " Largest elements of the original array are:");
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] < arr[j]) {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        System.out.println();
+        for (int i = 0; i < k; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+
+6) import java.util.Scanner;
+
+public class question6 {
+    public static void main(String[] args) {
+        int binary[] = new int[50];
+        Scanner input = new Scanner(System.in);
+        System.out.println("Input first Number: ");
+        int n = input.nextInt();
+        int i = 0;
+        while (n != 0) {
+            binary[i] = n % 2;
+            n = n / 2;
+            i++;
+        }
+        int c = 0;
+        for (int j = i - 1; j >= 0; j--) {
+            System.out.println("The binary representation of the given input is:" + binary[j]);
+            if (binary[j] == 0) {
+                c++;
+            }
+        }
+        System.out.println("");
+        System.out.println("Number of Zero bits are: "  + c);
+    }
+}
